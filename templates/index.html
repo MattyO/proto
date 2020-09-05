@@ -1,10 +1,56 @@
 <html>
   <head>
-    <link type="text/javascript" src="public/{{bundle['main.scss']}}" ></script>
+    <link type="text/javascript" src="public/{{bundle['main.js']}}" ></script>
+    <link rel="stylesheet" href="public/{{bundle['main.scss']}}" ></link>
   </head>
   <body>
     <h1>Hello World</h1>
-    <p id='content'></p>
+    <div id='content'></div>
+
+    <div class='page'>
+    <div class="contents contents-first">
+      <h3>Contents</h3>
+      <div class="items">
+        <div class='item'>
+          <select>
+            <option value="layout-12">Layout - 12 column</option>
+            <option value="text">Text</option>
+            <option value="Form">Form</option>
+            <option value="link">Link</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+          </select>
+          <br/>
+          <div class="data"></div>
+          <div class="contents">
+            <h3>Contents</h3>
+            <div class="items">
+              <div class="item">
+                <h4>Text</h4>
+                <div class="data">
+                  <input type="text"></input>
+                </div>
+              </div>
+              <div class="item">
+                <select>
+                  <option value="layout-12">Layout - 12 column</option>
+                  <option value="text">Text</option>
+                  <option value="Form">Form</option>
+                  <option value="link">Link</option>
+                  <option value="image">Image</option>
+                  <option value="video">Video</option>
+                </select>
+                <data>
+                </data>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      
+    </div>
     <pre>
     page
       contents
