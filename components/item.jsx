@@ -7,23 +7,22 @@ export default class Item extends React.Component {
         this.state = {
             items: []
         };
-        this.ref = React.createRef();
     }
 
     addItem() {
-        console.log("adding item")
-        this.state.items.push({type:null})
+        this.state.items.push({type: 'new'})
         this.setState(this.state)
-        console.log(this.state)
     }
 
     updateItem(index, data) {
-        this.state.items[index].update(data)
+        console.log(index)
+        console.log(data)
+        this.state.items[index] = data
+        this.setState(this.state)
     }
 
     findItemType(passed_item, index) {
-        console.log(passed_item)
-        return <NewItem  type={passed_item.type} ref={this.ref} />
+        return <NewItem  type={passed_item.type} index={index} parentref={this} />
     }
 
     render () {

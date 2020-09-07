@@ -6,9 +6,13 @@ export default class NewItem extends React.Component {
         this.state= {
             value: ""
         };
+        this.selectType = this.selectType.bind(this)
     }
-    selectType (){
-        self.ref.updateItem(this.props.index, {"type": this.state.value})
+
+    selectType (event){
+        console.log(this.props.parentref)
+        this.setState({value: event.target.value })
+        this.props.parentref.updateItem(this.props.index, {"type": event.target.value})
     }
 
     render () {
