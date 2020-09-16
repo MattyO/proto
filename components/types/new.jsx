@@ -10,16 +10,18 @@ export default class NewItem extends React.Component {
     }
 
     selectType (event){
-        console.log(this.props.parentref)
+        console.log(this.props.index)
         this.setState({value: event.target.value })
-        this.props.parentref.updateItem(this.props.index, {"type": event.target.value})
+        this.props.page.updateItem(this.props.index, {"type": event.target.value, "items": []})
     }
 
     render () {
-        return <div>
+        return <div className="item">
             <select value={this.state.value} onChange={this.selectType}> 
+                <option value="new">Select Type</option>
                 <option value="layout-12">Layout - 12 column</option>
                 <option value="text">Text</option>
+                <option value="list">List</option>
                 <option value="form">Form</option>
                 <option value="link">Link</option>
                 <option value="image">Image</option>
