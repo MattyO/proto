@@ -31,6 +31,14 @@ export default class Page extends React.Component {
     updateItem(index, data) {
         this.state.items[index] = data
         this.setState(this.state)
+
+        var found_items = this.state.items
+        while(index.length > 1){
+            found_items = found_items[index.shift()].items
+        }
+        found_items[index] = data
+
+        this.setState(this.state)
     }
 
     findItemType(passed_item, index) {
